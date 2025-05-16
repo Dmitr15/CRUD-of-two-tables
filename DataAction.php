@@ -1,7 +1,7 @@
 <?php
 class DataAction
 {
-    public static function get_all_products()
+    public static function get_all_products(): array
     {
         $query = Database::prepare("SELECT * from `product`");
         $query->execute();
@@ -10,7 +10,7 @@ class DataAction
         return $products;
     }
 
-    public static function get_all_suppliers()
+    public static function get_all_suppliers(): array
     {
         $query = Database::prepare("SELECT * from `supplier`");
         $query->execute();
@@ -19,7 +19,7 @@ class DataAction
         return $products;
     }
 
-    public static function get_all_relationship()
+    public static function get_all_relationship(): array
     {
         $sql = "SELECT product.name, supplier.namesupplier FROM `product`, `supplier` WHERE supplier.id= product.id_supplier;";
         $query = Database::prepare($sql);
@@ -29,10 +29,10 @@ class DataAction
         return $products;
     }
 
-    public static function add_product(string $img_path, string $name, string $supplier, string $description, int $cost)
+    public static function add_product(string $img_path, string $name, int $supplier, string $description, int $cost)
     {
-        $query = Database::prepare("INSERT INTO `product` (`img_path`, `name`, `id_supplier`, `description`, `cost`) VALUES (:img_path, :name, :gender, :supplier, :description, :cost)");
-        
+        $query = Database::prepare("INSERT INTO `product` (`img_path`, `name`, `id_supplier`, `description`, `cost`) VALUES (:img_path, :name, :supplier, :description, :cost)");
+
         $query->bindValue(":img_path", $img_path);
         $query->bindValue(":name", $name);
         $query->bindValue(":supplier", $supplier);
@@ -40,22 +40,22 @@ class DataAction
         $query->bindValue(":cost", $cost);
 
         if (!$query->execute()) {
-           throw new PDOException('Exception while adding a new product');
+            throw new PDOException('Exception while adding a new product');
         }
     }
 
     public static function add_supplier(string $name)
     {
         $query = Database::prepare("INSERT INTO `supplier` (`namesupplier`) VALUES (:name)");
-        
+
         $query->bindValue(":namesupplier", $name);
 
         if (!$query->execute()) {
-           throw new PDOException('Exception while adding a new supplier');
+            throw new PDOException('Exception while adding a new supplier');
         }
     }
 
-    public static function add_relationship(string $sql, array $filters): array
+    public static function add_relationship(string $sql, array $filters)
     {
         $query = Database::prepare($sql);
         foreach ($filters as $k => $v) {
