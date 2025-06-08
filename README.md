@@ -20,3 +20,9 @@
 
 ## Add product
 ![image](https://github.com/user-attachments/assets/e2be32c3-835c-4798-8f50-ee751b7a8995)
+
+## Product table
+![image](https://github.com/user-attachments/assets/c0dd2124-8e4a-4cc1-8fd9-093a71bc2fc7)
+
+## Supplier table
+![image](https://github.com/user-attachments/assets/208ac0da-9c73-4b81-9c26-ba9bb12308d9)
