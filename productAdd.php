@@ -4,7 +4,7 @@ error_reporting(E_ERROR | E_PARSE);
 require_once("core.php");
 require_once('head.php');
 
-$suppliers = DataAction::get_all_suppliers();
+$suppliers = UserTable::get_all_suppliers();
 
 $errors = UserAction::addProductField();
 ?>

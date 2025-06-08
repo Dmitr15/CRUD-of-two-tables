@@ -4,7 +4,7 @@ class Database{
     private $connection = null;
     protected function __construct()
     {
-        $this->connection=new \PDO('mysql:host=localhost;dbname=lr2;charset=utf8', 'root', '', 
+        $this->connection=new \PDO('mysql:host=localhost;dbname=My_DB;charset=utf8', 'root', '', 
         [PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, 
         PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC, 
         PDO::ATTR_EMULATE_PREPARES=>false]);  

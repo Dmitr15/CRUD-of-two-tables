@@ -21,13 +21,13 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/product.php">Продукт</a>
+                                <a class="nav-link active" aria-current="page" href="/Lr6/product.php">Продукт</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/supplier.php">Поставщик</a>
+                                <a class="nav-link" href="/Lr6/supplier.php">Поставщик</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/productSupplier.php">Связи продукт-поставщик</a>
+                                <a class="nav-link" href="/Lr6/relationship.php">Связи продукт-поставщик</a>
                             </li>
                         </ul>
                     </div>

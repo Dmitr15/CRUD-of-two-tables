@@ -4,6 +4,7 @@ error_reporting(E_ERROR | E_PARSE);
 require_once("core.php");
 require_once('head.php');
 
+$errors = UserAction::addSupplier();
 ?>
 
 <div class="container">
@@ -20,9 +21,9 @@ require_once('head.php');
 
     <h1>Добавить поставщика</h1>
 
-    <div class="alert alert-danger" role="alert">
-
-    </div>
+    <?php if (!empty($errors)): ?>
+        <div class="alert alert-danger" role="alert"><?= $errors ?></div>
+    <?php endif; ?>
 
     <form class="row row-cols-lg-auto g-3 align-items-center" method="POST">
         <div class="col-4">
@@ -32,3 +33,4 @@ require_once('head.php');
             <button class="btn btn-primary" type="submit">Отправить</button>
         </div>
     </form>
+</div>
